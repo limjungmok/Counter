@@ -1,5 +1,6 @@
 # Counter 만들기
-객체로 짜야한다.  
+
+## 객체로 짜야한다.  
 Key Point : Class, Prototype, Scope  
 
 
@@ -9,3 +10,8 @@ Key Point : Class, Prototype, Scope
 4. input box 숫자 범위는 100 ~ 300 사이값만 한정  
 5. input box 안에 숫자 이외에 다른 문자가 입력되면 focus 제거될 때 300으로 나타나야함.  
 6. 활성화 / 비활성화 버튼 클릭시 모든 기능 활성화 / 비활성화  
+
+
+## To Be  
+
+html 구조를 js에서 불러오도록 template 화 하기
