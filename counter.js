@@ -7,26 +7,25 @@ var MIN_VALUE = 100;
 var MAX_VALUE = 300;
 
 Counter.prototype = {
-	handleIncrement: function() {
+	handleIncrement() {
 		// 조건이 맞으면 +1
 		++this.num;
 		Counter.prototype.checkValue.call(this);
 	},
-	handleDecrement: function() {
+	handleDecrement() {
 		// 조건이 맞으면 -1
 		--this.num;
 		Counter.prototype.checkValue.call(this);
 	},
-	handleMouseUp: function() {
-		console.log('mouse up');
-		console.log(this);
-
+	handleMouseUp(interval) {
+		// mouseUp 이벤트 발생시 setInterval 해제
+		if(interval != undefined) {
+			clearInterval(interval);
+		} else {
+			return false;
+		}
 	},
-	handleMouseDown: function() {
-		console.log('mouse down');
-		console.log(this);
-	},
-	checkValue: function() {
+	checkValue() {
 		// 100미만일때 100 유지, 300초과일때 300 유지
 		if(this.num < MIN_VALUE) {
 			this.num = MIN_VALUE;
@@ -36,7 +35,7 @@ Counter.prototype = {
 			return;
 		}
 	},
-	onOff: function() {
+	onOff() {
 		// 활성화 / 비활성화
 		if(this.isActive) {
 			this.isActive = false;
