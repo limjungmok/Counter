@@ -46,7 +46,7 @@ $(function(){
 		});
 
 		// 마우스 press 버튼 누르는동안
-		self.on('mousedown', '.btn', function() {
+		self.on('mousedown', '.btn', function(e) {
 			if(hasClass(this, '_increment')) {
 				// + 버튼 눌렀을경우에만
 
@@ -64,8 +64,13 @@ $(function(){
 			}
 		});
 
+		self.on('mouseleave', '.btn', function(e) {
+			Counter.prototype.handleMouseUp.call(self, this.interval);
+		})
+
+
 		// 마우스 press 버튼 뗏을 때
-		self.on('mouseup', '.btn', function() {
+		self.on('mouseup', '.btn', function(e) {
 			Counter.prototype.handleMouseUp.call(self, this.interval);
 		});
 
